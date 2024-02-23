@@ -1,0 +1,56 @@
+{
+  "name": "@inotom/sws-icons",
+  "private": false,
+  "version": "1.0.0-beta.1",
+  "description": "A web components to display icons",
+  "type": "module",
+  "main": "dist/sws-icons.umd.js",
+  "module": "dist/sws-icons.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "dist/sws-icons.js",
+      "require": "dist/sws-icons.umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite",
+    "prebuild": "npm run clean & npm test",
+    "build": "tsc && vite build",
+    "clean": "rimraf '**/.DS_Store' & rimraf 'dist' & rimraf 'types'",
+    "lint:ts": "eslint --ext .ts src",
+    "serve": "tsc && vite preview",
+    "test": "npm run lint:ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inotom/sws-icons.git"
+  },
+  "keywords": [],
+  "author": "inotom (https://www.serendip.ws/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inotom/sws-icons/issues"
+  },
+  "homepage": "https://github.com/inotom/sws-icons#readme",
+  "devDependencies": {
+    "@types/node": "20.11.19",
+    "@typescript-eslint/eslint-plugin": "7.0.2",
+    "@typescript-eslint/parser": "7.0.2",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "prettier": "3.2.5",
+    "rimraf": "5.0.5",
+    "typescript": "5.3.3",
+    "vite": "5.1.4",
+    "vite-plugin-banner": "0.7.1"
+  },
+  "dependencies": {
+    "lit": "3.1.2"
+  }
+}

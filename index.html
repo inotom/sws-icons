@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@inotom/sws-icons demo</title>
+<script type="module" src="/src/index.ts"></script>
+<style>
+button {
+  appearance: none;
+  padding: 0;
+  background: none;
+  border: 0 none;
+  cursor: pointer;
+}
+
+[class*=demo-] {
+  margin: 1em 0;
+}
+
+.demo-001:hover sws-cross {
+  --sws-cross-horizontal-line-deg: 180deg;
+  --sws-cross-vertical-line-deg: 180deg;
+}
+
+.demo-002 sws-cross {
+  --sws-cross-position: relative;
+  --sws-cross-size: 50px;
+  --sws-cross-color: #f00;
+  --sws-cross-line-weight: 5px;
+  --sws-cross-line-border-radius: 5px;
+  --sws-cross-transition: transform 1s;
+  --sws-cross-horizontal-line-deg: 0deg;
+  --sws-cross-vertical-line-deg: 90deg;
+}
+
+.demo-002 input {
+  display: none;
+}
+
+.demo-002 input:checked + sws-cross {
+  --sws-cross-horizontal-line-deg: 360deg;
+  --sws-cross-vertical-line-deg: 360deg;
+}
+
+details {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #339;
+}
+
+details.mod--is-open sws-cross {
+  --sws-cross-horizontal-line-deg: 180deg;
+  --sws-cross-vertical-line-deg: 180deg;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  color: #fff;
+  background-color: #339;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > div {
+  overflow: hidden;
+  padding: 0 1em;
+}
+
+.demo-100 sws-hamburger {
+  --sws-hamburger-lines-bg-color: #66c;
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+}
+
+.demo-101 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-lines-bg-color: #66c;
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-width: 0%;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+}
+
+.demo-102 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-lines-bg-color: #66c;
+  --sws-hamburger-line-margin: 6px;
+  --sws-hamburger-lable-bg-color: #c66;
+}
+
+.demo-102 .hamburger-label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.demo-103 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-lines-bg-color: #66c;
+  --sws-hamburger-line-margin: 6px;
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-width: 0%;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+  --sws-hamburger-lable-bg-color: #c66;
+}
+
+.demo-103 .hamburger-label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.demo-104 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+}
+
+.demo-104 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-width: 0%;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+}
+
+.demo-105 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-line-margin: 6px;
+}
+.demo-105 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-width: 0%;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+}
+.demo-105 .hamburger-label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+.demo-105 sws-hamburger .hamburger-label.mod--open {
+  display: block;
+}
+.demo-105 sws-hamburger .hamburger-label.mod--close {
+  display: none;
+}
+.demo-105 button.mod--is-active sws-hamburger .hamburger-label.mod--open {
+  display: none;
+}
+.demo-105 button.mod--is-active sws-hamburger .hamburger-label.mod--close {
+  display: block;
+}
+
+.demo-106 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-line-margin: 3px;
+  --sws-hamburger-line-1-transform: translateY(
+    calc((var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin)) * -1)
+  );
+  --sws-hamburger-line-2-transform: translateY(
+    calc(var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin))
+  );
+}
+.demo-106 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-transform: translateY(0) rotate(-45deg);
+}
+
+.demo-107 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-line-margin: 3px;
+  --sws-hamburger-line-1-transform: translateY(
+    calc((var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin)) * -1)
+  );
+  --sws-hamburger-line-2-transform: translateY(
+    calc(var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin))
+  );
+}
+.demo-107 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-transform: translateY(0) rotate(-45deg);
+}
+.demo-107 .hamburger-label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+.demo-107 sws-hamburger .hamburger-label.mod--open {
+  display: block;
+}
+.demo-107 sws-hamburger .hamburger-label.mod--close {
+  display: none;
+}
+.demo-107 button.mod--is-active sws-hamburger .hamburger-label.mod--open {
+  display: none;
+}
+.demo-107 button.mod--is-active sws-hamburger .hamburger-label.mod--close {
+  display: block;
+}
+
+.demo-108 sws-hamburger {
+  --sws-hamburger-width: 100px;
+  --sws-hamburger-padding: 10px 20px;
+  --sws-hamburger-fg-color: #ff0;
+  --sws-hamburger-bg-color: #00a5ff;
+  --sws-hamburger-line-align: flex-end;
+  --sws-hamburger-line-weight: 5px;
+  --sws-hamburger-line-margin: 12px;
+  --sws-hamburger-line-border-radius: 5px;
+  --sws-hamburger-line-transition: transform .3s, opacity .3s, width .3s;
+  --sws-hamburger-line-3-width: 60%;
+  --sws-hamburger-lable-margin: 0;
+}
+.demo-108 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-opacity: 0;
+  --sws-hamburger-line-3-width: 100%;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+}
+
+.demo-109 button sws-hamburger {
+  --sws-hamburger-padding: 20px 10px 10px;
+  --sws-hamburger-width: 100px;
+  --sws-hamburger-bg-color: #eee;
+  --sws-hamburger-fg-color: #333;
+  --sws-hamburger-line-weight: 3px;
+  --sws-hamburger-line-margin: 3px;
+  --sws-hamburger-line-1-width: 50%;
+  --sws-hamburger-line-2-width: 50%;
+  --sws-hamburger-lable-margin: 0;
+  --sws-hamburger-line-1-transform: translateY(
+    calc((var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin)) * -1)
+  );
+  --sws-hamburger-line-2-transform: translateY(
+    calc(var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin))
+  );
+}
+.demo-109 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(30deg);
+  --sws-hamburger-line-2-transform: translateY(0) rotate(-30deg);
+}
+.demo-109 .hamburger-label {
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.demo-110 sws-hamburger {
+  --sws-hamburger-fg-color: #fff;
+  --sws-hamburger-bg-color: #ffa500;
+  --sws-hamburger-line-margin: 6px;
+  --sws-hamburger-line-transition: transform .3s, width .3s;
+  --sws-hamburger-line-1-color: linear-gradient(90deg, #fff 0%, #fff 10%, #fff0 10%, #fff0 20%, #fff 20%, #fff 100%);
+  --sws-hamburger-line-2-color: linear-gradient(90deg, #fff 0%, #fff 10%, #fff0 10%, #fff0 20%, #fff 20%, #fff 100%);
+  --sws-hamburger-line-3-color: linear-gradient(90deg, #fff 0%, #fff 10%, #fff0 10%, #fff0 20%, #fff 20%, #fff 100%);
+}
+.demo-110 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(30deg);
+  --sws-hamburger-line-2-width: 0;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-30deg);
+  --sws-hamburger-line-1-color: linear-gradient(90deg, #fff 0%, #fff 100%);
+  --sws-hamburger-line-3-color: linear-gradient(90deg, #fff 0%, #fff 100%);
+}
+
+.demo-110 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-2-width: 0%;
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+}
+
+.demo-201 sws-angle {
+  --sws-angle-transform: rotate(90deg);
+}
+.demo-202 sws-angle {
+  --sws-angle-transform: rotate(180deg);
+}
+
+.demo-203 sws-angle {
+  --sws-angle-transform: rotate(270deg);
+}
+
+.demo-204 sws-angle {
+  --sws-angle-size: 100px;
+  --sws-angle-color: #f00;
+  --sws-angle-line-weight: 5px;
+  --sws-angle-transform: rotate(90deg);
+}
+.demo-204 button.mod--is-active sws-angle {
+  --sws-angle-transform: rotate(270deg);
+}
+
+.demo-205 sws-angle {
+  --sws-angle-triangle-color: #000;
+  --sws-angle-line-weight: 0;
+}
+
+.demo-206 sws-angle {
+  --sws-angle-size: 100px;
+  --sws-angle-triangle-color: #f00;
+  --sws-angle-line-weight: 0;
+  --sws-angle-transform: rotate(90deg) scaleX(1.5);
+}
+.demo-206 button.mod--is-active sws-angle {
+  --sws-angle-transform: rotate(270deg) scaleX(1.5);
+}
+</style>
+</head>
+<body>
+  <h1>@inotom/sws-icons demo</h1>
+
+  <h2><code>&lt;sws-cross&gt;</code></h2>
+
+  <div class="demo-001">
+    <sws-cross></sws-cross>
+  </div>
+
+  <div class="demo-002">
+    <label>
+      <input type="checkbox">
+      <sws-cross></sws-cross>
+    </label>
+  </div>
+
+  <details>
+    <summary>
+      Lorem ipsum dolor sit amet
+      <sws-cross></sws-cross>
+    </summary>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </details>
+
+  <hr>
+
+  <h2><code>&lt;sws-hamburger&gt;</code></h2>
+
+  <div class="demo-100-plain">
+    <sws-hamburger></sws-hamburger>
+  </div>
+
+  <div class="demo-100">
+    <sws-hamburger></sws-hamburger>
+  </div>
+
+  <div class="demo-101">
+    <sws-hamburger></sws-hamburger>
+  </div>
+
+  <div class="demo-102">
+    <sws-hamburger>
+      <span class="hamburger-label">
+        MENU
+      </span>
+    </sws-hamburger>
+  </div>
+
+  <div class="demo-103">
+    <sws-hamburger>
+      <div class="hamburger-label">
+        MENU
+      </div>
+    </sws-hamburger>
+  </div>
+
+  <div class="demo-104">
+    <button class="js-toggle">
+      <sws-hamburger></sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-105">
+    <button class="js-toggle">
+      <sws-hamburger>
+        <span class="hamburger-label mod--open">
+          MENU
+        </span>
+        <span class="hamburger-label mod--close">
+          CLOSE
+        </span>
+      </sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-106">
+    <button class="js-toggle">
+      <sws-hamburger is-double-line="true"></sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-107">
+    <button class="js-toggle">
+      <sws-hamburger is-double-line="true">
+        <span class="hamburger-label mod--open">
+          MENU
+        </span>
+        <span class="hamburger-label mod--close">
+          CLOSE
+        </span>
+      </sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-108">
+    <button class="js-toggle">
+      <sws-hamburger>
+        メニュー
+      </sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-109">
+    <button class="js-toggle">
+      <sws-hamburger is-double-line="true">
+        <div class="hamburger-label">
+          メニュー
+        </div>
+      </sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-110">
+    <button class="js-toggle">
+      <sws-hamburger></sws-hamburger>
+    </button>
+  </div>
+
+  <hr>
+
+  <h2><code>&lt;sws-angle&gt;</code></h2>
+
+  <div class="demo-200">
+    <sws-angle></sws-angle>
+  </div>
+
+  <div class="demo-201">
+    <sws-angle></sws-angle>
+  </div>
+
+  <div class="demo-202">
+    <sws-angle></sws-angle>
+  </div>
+
+  <div class="demo-203">
+    <sws-angle></sws-angle>
+  </div>
+
+  <div class="demo-204">
+    <button class="js-toggle">
+      <sws-angle linejoin="round" linecap="round"></sws-angle>
+    </button>
+  </div>
+
+  <div class="demo-205">
+    <sws-angle></sws-angle>
+  </div>
+
+  <div class="demo-206">
+    <button class="js-toggle">
+      <sws-angle linejoin="round" linecap="round"></sws-angle>
+    </button>
+  </div>
+<script>
+const animationTiming = {
+  duration: 300,
+  easing: 'ease-in-out',
+};
+
+const closingAnimation = (elContents) => [
+  {
+    height: `${elContents.offsetHeight}px`,
+  },
+  {
+    height: 0,
+  },
+];
+
+const openingAnimation = (elContents) => [
+  {
+    height: 0,
+  },
+  {
+    height: `${elContents.offsetHeight}px`,
+  },
+];
+
+Array.from(document.querySelectorAll('details'), (elDetails) => {
+  const elSummary = elDetails.querySelector('summary');
+  const elContents = elDetails.querySelector(':scope > div');
+  if (!elSummary || !elContents) {
+    return;
+  }
+
+  elSummary.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (elDetails.getAttribute('open') !== null) {
+      elDetails.classList.remove('mod--is-open');
+      const anim = elContents.animate(closingAnimation(elContents), animationTiming);
+      anim.addEventListener('finish', () => {
+        elDetails.removeAttribute('open');
+      });
+    } else {
+      elDetails.setAttribute('open', '');
+      elDetails.classList.add('mod--is-open');
+      elContents.animate(openingAnimation(elContents), animationTiming);
+    }
+  });
+});
+
+Array.from(document.querySelectorAll('.js-toggle'), (el) => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('mod--is-active');
+  });
+});
+</script>
+</body>
+</html>
