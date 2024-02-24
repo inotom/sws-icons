@@ -1,7 +1,7 @@
 {
   "name": "@inotom/sws-icons",
   "private": false,
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "A web components to display icons",
   "type": "module",
   "main": "dist/sws-icons.umd.js",

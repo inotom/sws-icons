@@ -81,8 +81,9 @@ sws-hamburger {
   --sws-hamburger-line-3-transform: translateY(
     calc(var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin))
   );
-  --sws-hamburger-lable-bg-color: initial;
-  --sws-hamburger-lable-margin: 3px;
+  --sws-hamburger-label-width: 100%;
+  --sws-hamburger-label-bg-color: initial;
+  --sws-hamburger-label-margin: 0;
 }
 ```
 

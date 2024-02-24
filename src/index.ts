@@ -91,8 +91,9 @@ export class SwsHamburger extends LitElement {
       --sws-hamburger-line-3-transform: translateY(
         calc(var(--sws-hamburger-line-weight) + var(--sws-hamburger-line-margin))
       );
-      --sws-hamburger-lable-bg-color: initial;
-      --sws-hamburger-lable-margin: 3px;
+      --sws-hamburger-label-width: 100%;
+      --sws-hamburger-label-bg-color: initial;
+      --sws-hamburger-label-margin: 0;
     }
     .sws-hamburger {
       box-sizing: border-box;
@@ -100,7 +101,7 @@ export class SwsHamburger extends LitElement {
       flex-direction: var(--sws-hamburger-flex-direction);
       justify-content: var(--sws-hamburger-justify-content);
       align-items: var(--sws-hamburger-align-items);
-      gap: var(--sws-hamburger-lable-margin);
+      gap: var(--sws-hamburger-label-margin);
       width: var(--sws-hamburger-width);
       height: var(--sws-hamburger-height);
       padding: var(--sws-hamburger-padding);
@@ -144,7 +145,8 @@ export class SwsHamburger extends LitElement {
     }
     .sws-hamburger__label {
       flex-shrink: 0;
-      background-color: var(--sws-hamburger-lable-bg-color);
+      width: var(--sws-hamburger-label-width);
+      background-color: var(--sws-hamburger-label-bg-color);
     }
     .sws-hamburger__label.mod--empty {
       display: none;
