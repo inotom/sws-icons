@@ -50,6 +50,10 @@ Set element's style etc... by css custom properties.
 
 ```css
 sws-hamburger {
+  --sws-hamburger-display: flex;
+  --sws-hamburger-flex-direction: column;
+  --sws-hamburger-justify-content: center;
+  --sws-hamburger-align-items: center;
   --sws-hamburger-width: 60px;
   --sws-hamburger-height: var(--sws-hamburger-width);
   --sws-hamburger-padding: 10px;

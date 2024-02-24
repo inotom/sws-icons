@@ -290,6 +290,19 @@ details > div {
   --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
 }
 
+.demo-111 sws-hamburger {
+  --sws-hamburger-flex-direction: column-reverse;
+  --sws-hamburger-width: 100px;
+  --sws-hamburger-padding: 20px;
+  --sws-hamburger-bg-color: #9ea;
+  --sws-hamburger-line-transition: transform .3s, opacity .3s;
+}
+.demo-111 button.mod--is-active sws-hamburger {
+  --sws-hamburger-line-2-opacity: 0;
+  --sws-hamburger-line-1-transform: translateY(0) rotate(45deg);
+  --sws-hamburger-line-3-transform: translateY(0) rotate(-45deg);
+}
+
 .demo-201 sws-angle {
   --sws-angle-transform: rotate(90deg);
 }
@@ -446,6 +459,16 @@ details > div {
   <div class="demo-110">
     <button class="js-toggle">
       <sws-hamburger></sws-hamburger>
+    </button>
+  </div>
+
+  <div class="demo-111">
+    <button class="js-toggle">
+      <sws-hamburger>
+        <div class="hamburger-label">
+          MENU
+        </div>
+      </sws-hamburger>
     </button>
   </div>
 

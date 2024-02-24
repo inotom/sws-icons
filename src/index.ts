@@ -60,6 +60,10 @@ export class SwsCross extends LitElement {
 export class SwsHamburger extends LitElement {
   static styles = css`
     :host {
+      --sws-hamburger-display: flex;
+      --sws-hamburger-flex-direction: column;
+      --sws-hamburger-justify-content: center;
+      --sws-hamburger-align-items: center;
       --sws-hamburger-width: 60px;
       --sws-hamburger-height: var(--sws-hamburger-width);
       --sws-hamburger-padding: 10px;
@@ -92,10 +96,10 @@ export class SwsHamburger extends LitElement {
     }
     .sws-hamburger {
       box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: cener;
+      display: var(--sws-hamburger-display);
+      flex-direction: var(--sws-hamburger-flex-direction);
+      justify-content: var(--sws-hamburger-justify-content);
+      align-items: var(--sws-hamburger-align-items);
       gap: var(--sws-hamburger-lable-margin);
       width: var(--sws-hamburger-width);
       height: var(--sws-hamburger-height);
@@ -110,6 +114,7 @@ export class SwsHamburger extends LitElement {
       justify-content: center;
       align-items: var(--sws-hamburger-line-align);
       position: relative;
+      width: 100%;
       background-color: var(--sws-hamburger-lines-bg-color);
     }
     .sws-hamburger__line {
