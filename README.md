@@ -55,6 +55,7 @@ sws-hamburger {
   --sws-hamburger-justify-content: center;
   --sws-hamburger-align-items: center;
   --sws-hamburger-gap: 0;
+  --sws-hamburger-position: relative;
   --sws-hamburger-width: 60px;
   --sws-hamburger-height: var(--sws-hamburger-width);
   --sws-hamburger-padding: 10px;

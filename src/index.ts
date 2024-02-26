@@ -65,6 +65,7 @@ export class SwsHamburger extends LitElement {
       --sws-hamburger-justify-content: center;
       --sws-hamburger-align-items: center;
       --sws-hamburger-gap: 0;
+      --sws-hamburger-position: relative;
       --sws-hamburger-width: 60px;
       --sws-hamburger-height: var(--sws-hamburger-width);
       --sws-hamburger-padding: 10px;
@@ -102,6 +103,7 @@ export class SwsHamburger extends LitElement {
       justify-content: var(--sws-hamburger-justify-content);
       align-items: var(--sws-hamburger-align-items);
       gap: var(--sws-hamburger-gap);
+      position: var(--sws-hamburger-position);
       width: var(--sws-hamburger-width);
       height: var(--sws-hamburger-height);
       padding: var(--sws-hamburger-padding);
