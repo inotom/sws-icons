@@ -54,6 +54,7 @@ sws-hamburger {
   --sws-hamburger-flex-direction: column;
   --sws-hamburger-justify-content: center;
   --sws-hamburger-align-items: center;
+  --sws-hamburger-gap: 0;
   --sws-hamburger-width: 60px;
   --sws-hamburger-height: var(--sws-hamburger-width);
   --sws-hamburger-padding: 10px;
@@ -83,7 +84,6 @@ sws-hamburger {
   );
   --sws-hamburger-label-width: 100%;
   --sws-hamburger-label-bg-color: initial;
-  --sws-hamburger-label-margin: 0;
 }
 ```
 

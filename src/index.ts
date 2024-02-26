@@ -64,6 +64,7 @@ export class SwsHamburger extends LitElement {
       --sws-hamburger-flex-direction: column;
       --sws-hamburger-justify-content: center;
       --sws-hamburger-align-items: center;
+      --sws-hamburger-gap: 0;
       --sws-hamburger-width: 60px;
       --sws-hamburger-height: var(--sws-hamburger-width);
       --sws-hamburger-padding: 10px;
@@ -93,7 +94,6 @@ export class SwsHamburger extends LitElement {
       );
       --sws-hamburger-label-width: 100%;
       --sws-hamburger-label-bg-color: initial;
-      --sws-hamburger-label-margin: 0;
     }
     .sws-hamburger {
       box-sizing: border-box;
@@ -101,7 +101,7 @@ export class SwsHamburger extends LitElement {
       flex-direction: var(--sws-hamburger-flex-direction);
       justify-content: var(--sws-hamburger-justify-content);
       align-items: var(--sws-hamburger-align-items);
-      gap: var(--sws-hamburger-label-margin);
+      gap: var(--sws-hamburger-gap);
       width: var(--sws-hamburger-width);
       height: var(--sws-hamburger-height);
       padding: var(--sws-hamburger-padding);
